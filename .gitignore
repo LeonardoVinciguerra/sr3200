@@ -1,0 +1,16 @@
+backup*
+dbupdate*
+Debug*
+Fiducials/*
+gerber/*
+images*
+languages*
+logs*
+Release*
+update/*
+vision/*
+wxsmith*
+*.db
+*project
+wxsr3200
+
