@@ -1,0 +1,177 @@
+//---------------------------------------------------------------------------
+//
+// Name:        GlobalDefs.h
+// Author:      Gabriel Ferri
+// Created:     11/04/2008
+// Description: Definitions for the SR3200 application
+//
+//---------------------------------------------------------------------------
+#ifndef __GLOBALDEFS_H
+#define __GLOBALDEFS_H
+
+#define MACHINE_NAME				wxT("SR3200")
+
+
+	//----------//
+	// Versions //
+	//----------//
+
+#define SW_VERSION					wxT("1.05a")
+#define DB_VERSION					wxT("1.00")
+
+
+	//------------------//
+	// Application defs //
+	//------------------//
+
+#define	SR_OK						0
+#define	SR_ERROR					-1
+
+#define FILE_DB						wxT("SR3200.db")
+#define FILE_DBEMPTY				wxT("empty.db")
+#define FILE_DBBACKUPEXT			wxT(".dbb")
+#define DIR_LANGUAGES				wxT(".//languages")
+#define DIR_DBBACKUP				wxT(".//backup//db")
+#define DIR_SWBACKUP				wxT(".//backup//sw")
+#define DIR_SWUPDATE				wxT(".//update")
+#define DIR_DBUPDATE				wxT(".//dbupdate")
+#define DIR_GERBER					wxT("./gerber")
+#define DIR_LOGS					wxT("./logs")
+#define DIR_SHARED_LOGS				wxT("/mnt/qserver/logs")
+
+#define NUM_FIDUCIALS				12
+#define NUM_MOTORS					12
+#define NUM_SPEEDS					9
+#define NUM_SERIALS					2
+#define NUM_OFFSET_POINTS			195
+#define NUM_IO						38
+#define NUM_VERIFY_POINTS			10
+#define NUM_PINS_POINTS				20
+#define NUM_MOTORSBOARDS			8
+
+#define COMTIMEOUT					100
+#define MOTOR_STATUS_DELAY			150
+
+#define ORIGIN_SEARCH_SPEED_DIV		4
+
+#define SQUEEGEES_DELAY				1000
+#define SQUEEGEES_RECOVERY_DELAY	200
+
+#define FLICKERING_DELAY			300
+#define FLICKERING_DELAY_PROTOTYPE	400
+
+#define CAMAXIS_DELAY				1000
+
+#define INPUTTIMER					500
+#define INPUTTIMERHWT				500
+#define STATUSTIMER					500
+
+#define MM_X_PIXEL					0.02f
+// slider scale: eg. 20 -> 1/20=0.05 per step
+#define CIRCLE_SCALE				20.0f
+#define RECTANGLE_SCALE				20.0f
+#define TOLERANCE_SCALE				20.0f
+//
+#define CIRCLE_DIAMETER_MIN_MM		0.20f
+#define CIRCLE_DIAMETER_MAX_MM		6.00f
+#define RECT_X_MIN_MM				0.20f
+#define RECT_X_MAX_MM				6.00f
+#define RECT_Y_MIN_MM				0.20f
+#define RECT_Y_MAX_MM				6.00f
+#define TOLERANCE_MIN_MM			0.05f
+#define TOLERANCE_MAX_MM			0.30f
+
+#define PLATE_MOVEMENT_DELTA_MIN	-3.0f
+#define PLATE_MOVEMENT_DELTA_MAX	3.0f
+#define PLATE_DISENGAGE_MIN			0.0f
+#define PLATE_DISENGAGE_MAX			7.0f
+#define VERIFY_DELAY_MIN			1
+#define VERIFY_DELAY_MAX			10
+#define RECOVERY_F_MIN				-50.0f
+#define RECOVERY_F_MAX				50.0f
+#define RECOVERY_R_MIN				-50.0f
+#define RECOVERY_R_MAX				50.0f
+
+#define OFFSET_NUMX_DEFAULT			13
+#define OFFSET_NUMY_DEFAULT			15
+#define OFFSET_DIST_DEFAULT			28.0
+
+#define ALIGNMENT_ROTATION_DIFF		10.0f
+
+#define CAMPISTON_DELAY				500
+
+#define LOADERPISTON_DELAY			3500
+
+#define LOCKPISTON_DELAY			500
+
+#define CONVPISTON_DELAY			2700
+
+#define CONVEYOR_WIDTH_DELTA		0.5f
+
+#define INCH_TO_MM					25.4f
+
+#define MIN_RACK_POS				1
+#define MAX_RACK_POS				50
+
+	//--------------------//
+	// Inputs/Outputs IDs //
+	//--------------------//
+
+#define OUTPUT_LEDUP				0
+#define OUTPUT_LEDDOWN				1
+#define OUTPUT_SQUEEGEESFRONT		2
+#define OUTPUT_SQUEEGEESREAR		3
+#define OUTPUT_FRAMEUNLOCK			4
+#define OUTPUT_SEMAPHORE_RED		5
+#define OUTPUT_SEMAPHORE_GREEN		6
+#define OUTPUT_BUZZER				7
+#define OUTPUT_TABLEVACUUM			8 // n.u. in SR3200
+#define OUTPUT_BOARDLOCK			9
+#define OUTPUT_CONVEYOR_PISTON		10
+#define OUTPUT_LOADER_PISTON		11
+#define OUTPUT_CAMERA_PISTON		12
+
+#define INPUT_LOADERCWLIM			13
+#define INPUT_LOADERCCWLIM			14
+#define INPUT_LOADERZERO			15
+#define INPUT_SENSOR				16
+#define INPUT_PEDALSTART			17 // n.u. in SR3200
+#define INPUT_AIR					18
+#define INPUT_PLATECWLIM			19
+#define INPUT_PLATECCWLIM			20
+#define INPUT_PLATEZERO				21
+#define INPUT_SQUEEGEESCWLIM		22
+#define INPUT_SQUEEGEESCCWLIM		23
+#define INPUT_SQUEEGEESZERO			24
+#define INPUT_CAMXZERO				25
+#define INPUT_CAMYZERO				26
+#define INPUT_COVER					27
+#define INPUT_CAMXCWLIM				28
+#define INPUT_CAMXCCWLIM			29
+#define INPUT_CAMYCWLIM				30
+#define INPUT_CAMYCCWLIM			31
+#define INPUT_LCONVWZERO			32
+#define INPUT_CCONVWZERO			33
+#define INPUT_LCONVWCWLIM			34
+#define INPUT_LCONVWCCWLIM			35
+#define INPUT_CCONVWCWLIM			36
+#define INPUT_CCONVWCCWLIM			37
+
+
+	//--------------//
+	// Structs Defs //
+	//--------------//
+
+struct PointD
+{
+	double X;
+	double Y;
+};
+
+struct PointF
+{
+	float X;
+	float Y;
+};
+
+#endif
